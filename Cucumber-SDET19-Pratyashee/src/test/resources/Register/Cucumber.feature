@@ -28,5 +28,5 @@ And User clicks on Send button
 Then User should receive an Acknowledgment
 
 Examples:
-|firstname|lastname|email                 |username        |pwd|
-|Testsdet2|Sample  |testsample21@gmail.com|TestSampleUser21|Tester@123|
+|firstname |lastname|email                 |username      |pwd|
+|Pratyashee|Changmai|pratyaTest01@gmail.com|PratyaTester01|Pratya@123|

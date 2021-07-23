@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cucumber</title>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<style>
+.cucumber-react .cucumber-status--passed {
+  color: #2CB14A;
+}
+.cucumber-react .cucumber-status--skipped {
+  color: #00A0CC;
+}
+.cucumber-react .cucumber-status--pending {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--undefined {
+  color: #FFAD33;
+}
+.cucumber-react .cucumber-status--ambiguous {
+  color: #F4EBFD;
+}
+.cucumber-react .cucumber-status--failed {
+  color: #BB0000;
+}
+.cucumber-react .cucumber-status--unknown {
+  color: #B6BECB;
+}
+.cucumber-react h1, .cucumber-react h2, .cucumber-react h3 {
+  padding: 0;
+  margin: 0;
+}
+.cucumber-react a {
+  color: inherit;
+}
+.cucumber-react .gherkin-document-list {
+  font: 14px "Open Sans", sans-serif;
+  color: #161C24;
+  background: #fff;
+  overflow-x: hidden;
+}
+.cucumber-react .cucumber-title {
+  margin-top: 0.3em;
+  margin-bottom: 0;
+  display: inline-block;
+}
+.cucumber-react .cucumber-title__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-title__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-tags {
+  padding: 0;
+  margin-bottom: 0;
+}
+.cucumber-react .cucumber-tags .cucumber-tag {
+  display: inline;
+  list-style-type: none;
+  padding: 4px 8px 4px 8px;
+  margin-right: 6px;
+  background-color: #FFFFFF;
+  border-radius: 6px;
+}
+.cucumber-react .cucumber-feature__icon {
+  padding-top: 0.35em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-description,
+.cucumber-react .cucumber-children {
+  margin-left: 1em;
+}
+.cucumber-react .cucumber-feature,
+.cucumber-react .cucumber-rule,
+.cucumber-react .cucumber-scenario,
+.cucumber-react .cucumber-background {
+  margin-bottom: 1em;
+}
+.cucumber-react .cucumber-steps {
+  list-style-type: none;
+  padding-left: 10px;
+}
+.cucumber-react .cucumber-steps .cucumber-step {
+  display: flex;
+}
+.cucumber-react .cucumber-steps .cucumber-step__status {
+  padding-top: 0.2em;
+  padding-right: 0.5em;
+}
+.cucumber-react .cucumber-steps .cucumber-step__content {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-steps .cucumber-step__keyword {
+  font-weight: bold;
+}
+.cucumber-react .cucumber-steps .cucumber-step__text {
+  font-weight: normal;
+}
+.cucumber-react .cucumber-steps .cucumber-step__param {
+  font-weight: normal;
+  font-style: italic;
+}
+.cucumber-react .cucumber-table {
+  border-collapse: collapse;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.cucumber-react .cucumber-table__header-cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell {
+  border: 1px solid #4B5662;
+  padding: 0.3em;
+}
+.cucumber-react .cucumber-table__cell__status {
+  padding: 0.5em 3px 3px 3px;
+}
+.cucumber-react .cucumber-table__cell__step {
+  flex-grow: 1;
+}
+.cucumber-react .cucumber-code {
+  padding: 0.25em;
+  background-color: #ebebeb;
+}
+.cucumber-react .cucumber-error {
+  padding: 0.5em;
+  margin: 0;
+  overflow: scroll;
+}
+.cucumber-react .cucumber-no-documents {
+  font: 14px "Open Sans", sans-serif;
+}
+.cucumber-react .cucumber-attachment {
+  background-color: #ebebeb;
+  padding: 0.5em;
+}
+.cucumber-react .cucumber-attachment__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-attachment__image {
+  margin-top: 1em;
+}
+.cucumber-react .cucumber-anchor {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 0.3em;
+}
+.cucumber-react .cucumber-anchor__link {
+  opacity: 0;
+  transition: all 0.35s ease-in-out;
+  position: absolute;
+  left: -20px;
+  display: flex;
+  align-items: center;
+}
+.cucumber-react .cucumber-anchor__icon {
+  margin-right: 0.5em;
+}
+.cucumber-react .cucumber-anchor:hover a {
+  opacity: 1;
+  width: max-content;
+  transition: all 0.35s ease-in-out;
+}
+.cucumber-react .cucumber-anchor > * {
+  height: 100%;
+  margin-top: 0px;
+}
+
+.cucumber-report-header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font: 11px "Open Sans", sans-serif;
+  margin-bottom: 1em;
+}
+.cucumber-report-header > * {
+  padding: 1em;
+}
+.cucumber-report-header .cucumber-status-filter {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-status-filter table {
+  width: 100%;
+}
+.cucumber-report-header .cucumber-execution-data {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.cucumber-report-header .cucumber-search-bar {
+  border-right: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search input {
+  padding: 0.4em;
+  border-radius: 0;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-search button {
+  height: 2.2em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar p.help {
+  font-size: 80%;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul {
+  display: inline;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li input {
+  display: inline-block;
+  width: auto;
+  height: 0.6em;
+}
+.cucumber-report-header .cucumber-search-bar form.cucumber-search-bar-filter ul li label {
+  padding-right: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: 1/-1;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .cucumber-report-header {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+  .cucumber-report-header .cucumber-status-filter {
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-execution-data {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 0;
+  }
+  .cucumber-report-header .cucumber-search-bar {
+    grid-column: auto;
+  }
+}
+.accordion {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.accordion__button {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+.accordion__button:hover {
+    background-color: #ddd;
+}
+
+.accordion__button:before {
+    display: inline-block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 12px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(-45deg);
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+    transform: rotate(45deg);
+}
+
+.accordion__panel {
+    padding: 20px;
+    animation: fadein 0.35s ease-in;
+}
+
+	</style>
+</head>
+<body>
+<div id="content">
+</div>
+<script>
+window.CUCUMBER_MESSAGES = [{"meta":{"protocolVersion":"13.0.1","implementation":{"name":"cucumber-jvm","version":"6.7.0"},"runtime":{"name":"Java HotSpot(TM) 64-Bit Server VM","version":"25.201-b09"},"os":{"name":"Windows 10"},"cpu":{"name":"amd64"}}},{"testRunStarted":{"timestamp":{"seconds":"1627048073","nanos":296000000}}},{"source":{"uri":"file:///C:/Users/PRATYASHEECHANGMAI/git/cucumber-sdet19/Cucumber-SDET19-Pratyashee/src/test/resources/Register/Cucumber.feature","data":"Feature: To Sign Up and Register for Website Application\r\n\r\nScenario Outline: To register and sign up new user\r\nGiven Homepage is in English language\r\nWhen User clicks on Signup button\r\nAnd User enters Firstname \"\u003cfirstname\u003e\"\r\nAnd User enters Lastname \"\u003clastname\u003e\"\r\nAnd User enters Email \"\u003cemail\u003e\"\r\nAnd User enters Username \"\u003cusername\u003e\"\r\nAnd User enters Password \"\u003cpwd\u003e\"\r\nAnd User enters Confirm Password \"\u003cpwd\u003e\"\r\nAnd User clicks Register button\r\nThen User should see Confirmation message for \"\u003cfirstname\u003e\"\"\u003clastname\u003e\" and Email as \"\u003cemail\u003e\"\r\n\r\nWhen User clicks Compose button in Homepage\r\nAnd User enters Email details for \"\u003cfirstname\u003e\"\r\nAnd User clicks on Send button\r\nThen User should receive an Acknowledgment\r\n\r\nExamples:\r\n|firstname |lastname|email                 |username      |pwd|\r\n|Pratyashee|Changmai|pratyaTest02@gmail.com|PratyaTester02|Pratya@123|","mediaType":"text/x.cucumber.gherkin+plain"}},{"gherkinDocument":{"uri":"file:///C:/Users/PRATYASHEECHANGMAI/git/cucumber-sdet19/Cucumber-SDET19-Pratyashee/src/test/resources/Register/Cucumber.feature","feature":{"location":{"line":1,"column":1},"language":"en","keyword":"Feature","name":"To Sign Up and Register for Website Application","children":[{"scenario":{"location":{"line":3,"column":1},"keyword":"Scenario Outline","name":"To register and sign up new user","steps":[{"location":{"line":4,"column":1},"keyword":"Given ","text":"Homepage is in English language","id":"df69d9d8-43dc-4d48-bd2b-2e22585d7f5f"},{"location":{"line":5,"column":1},"keyword":"When ","text":"User clicks on Signup button","id":"7d32893c-946e-490b-9cbc-4d50e798cd09"},{"location":{"line":6,"column":1},"keyword":"And ","text":"User enters Firstname \"\u003cfirstname\u003e\"","id":"7254cdc9-5ce0-44bb-a0db-16b51d0d6af9"},{"location":{"line":7,"column":1},"keyword":"And ","text":"User enters Lastname \"\u003clastname\u003e\"","id":"e3b5b135-531c-4404-8914-32b52b18e311"},{"location":{"line":8,"column":1},"keyword":"And ","text":"User enters Email \"\u003cemail\u003e\"","id":"7997c97a-6c4b-451e-9edd-ddcf29694b50"},{"location":{"line":9,"column":1},"keyword":"And ","text":"User enters Username \"\u003cusername\u003e\"","id":"39dc39ca-20c3-4fe9-8e1c-ede435d89bd8"},{"location":{"line":10,"column":1},"keyword":"And ","text":"User enters Password \"\u003cpwd\u003e\"","id":"0851542e-20a0-4ec2-aabe-511f617b3757"},{"location":{"line":11,"column":1},"keyword":"And ","text":"User enters Confirm Password \"\u003cpwd\u003e\"","id":"84a9d21f-e5c6-4b09-957e-dcab69142855"},{"location":{"line":12,"column":1},"keyword":"And ","text":"User clicks Register button","id":"0f1f3425-17f0-4942-8ed9-9144dba9e502"},{"location":{"line":13,"column":1},"keyword":"Then ","text":"User should see Confirmation message for \"\u003cfirstname\u003e\"\"\u003clastname\u003e\" and Email as \"\u003cemail\u003e\"","id":"f01db265-a5b5-48fb-9246-1dc2af7e8af9"},{"location":{"line":15,"column":1},"keyword":"When ","text":"User clicks Compose button in Homepage","id":"5d8c9df3-dd8c-4d31-a368-e90d2ea4d4f9"},{"location":{"line":16,"column":1},"keyword":"And ","text":"User enters Email details for \"\u003cfirstname\u003e\"","id":"abfa318d-54c7-4bae-847e-f854d9024e34"},{"location":{"line":17,"column":1},"keyword":"And ","text":"User clicks on Send button","id":"5099c980-c062-4af3-906b-2201e71985b2"},{"location":{"line":18,"column":1},"keyword":"Then ","text":"User should receive an Acknowledgment","id":"050c04e4-e0da-4157-a64c-9081dc8e0438"}],"examples":[{"location":{"line":20,"column":1},"keyword":"Examples","tableHeader":{"location":{"line":21,"column":1},"cells":[{"location":{"line":21,"column":2},"value":"firstname"},{"location":{"line":21,"column":13},"value":"lastname"},{"location":{"line":21,"column":22},"value":"email"},{"location":{"line":21,"column":45},"value":"username"},{"location":{"line":21,"column":60},"value":"pwd"}],"id":"ac26e88d-2981-4f72-bb69-0aafb2a74b24"},"tableBody":[{"location":{"line":22,"column":1},"cells":[{"location":{"line":22,"column":2},"value":"Pratyashee"},{"location":{"line":22,"column":13},"value":"Changmai"},{"location":{"line":22,"column":22},"value":"pratyaTest02@gmail.com"},{"location":{"line":22,"column":45},"value":"PratyaTester02"},{"location":{"line":22,"column":60},"value":"Pratya@123"}],"id":"6dc530f0-a1b0-4ee4-b5d6-fc958c192147"}],"id":"9924d11d-55d1-4a9d-8c49-ce4f66d14a3d"}],"id":"82384e59-926b-4182-93aa-913add27d9a9"}}]}}},{"pickle":{"id":"2bb37960-cd7d-444c-8974-18e02c62ab10","uri":"file:///C:/Users/PRATYASHEECHANGMAI/git/cucumber-sdet19/Cucumber-SDET19-Pratyashee/src/test/resources/Register/Cucumber.feature","name":"To register and sign up new user","language":"en","steps":[{"text":"Homepage is in English language","id":"c5514dd4-3005-4a06-a3b6-e6492578aaba","astNodeIds":["df69d9d8-43dc-4d48-bd2b-2e22585d7f5f","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User clicks on Signup button","id":"592e5307-6969-4657-a765-542e73457c31","astNodeIds":["7d32893c-946e-490b-9cbc-4d50e798cd09","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User enters Firstname \"Pratyashee\"","id":"08dd68d1-1ed6-48e5-8806-9ab2eb6d8670","astNodeIds":["7254cdc9-5ce0-44bb-a0db-16b51d0d6af9","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User enters Lastname \"Changmai\"","id":"29de4ddd-d996-4606-b298-7bf343d53830","astNodeIds":["e3b5b135-531c-4404-8914-32b52b18e311","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User enters Email \"pratyaTest02@gmail.com\"","id":"38142155-af90-448d-8729-9cef2e4d3899","astNodeIds":["7997c97a-6c4b-451e-9edd-ddcf29694b50","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User enters Username \"PratyaTester02\"","id":"00b52eb1-1e64-4783-8e4e-2213e995fbd4","astNodeIds":["39dc39ca-20c3-4fe9-8e1c-ede435d89bd8","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User enters Password \"Pratya@123\"","id":"2cf763e3-bb00-4db3-8d1f-5c6dce4818c9","astNodeIds":["0851542e-20a0-4ec2-aabe-511f617b3757","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User enters Confirm Password \"Pratya@123\"","id":"d7cccf6a-f85e-4a18-80d4-fd072abb370a","astNodeIds":["84a9d21f-e5c6-4b09-957e-dcab69142855","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User clicks Register button","id":"6a749392-1db8-418a-b8bd-21889006f603","astNodeIds":["0f1f3425-17f0-4942-8ed9-9144dba9e502","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User should see Confirmation message for \"Pratyashee\"\"Changmai\" and Email as \"pratyaTest02@gmail.com\"","id":"449ab8be-cfe9-42b7-8b0c-35e0bce34ae5","astNodeIds":["f01db265-a5b5-48fb-9246-1dc2af7e8af9","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User clicks Compose button in Homepage","id":"317f7650-f943-4610-9c21-2579c772b67a","astNodeIds":["5d8c9df3-dd8c-4d31-a368-e90d2ea4d4f9","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User enters Email details for \"Pratyashee\"","id":"892b8960-24cb-436a-8bce-96ea617ce75d","astNodeIds":["abfa318d-54c7-4bae-847e-f854d9024e34","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User clicks on Send button","id":"9da69042-1017-437a-82c2-582373472171","astNodeIds":["5099c980-c062-4af3-906b-2201e71985b2","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]},{"text":"User should receive an Acknowledgment","id":"922ce352-acdf-4b45-bc45-11a28980c48d","astNodeIds":["050c04e4-e0da-4157-a64c-9081dc8e0438","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]}],"astNodeIds":["82384e59-926b-4182-93aa-913add27d9a9","6dc530f0-a1b0-4ee4-b5d6-fc958c192147"]}},{"stepDefinition":{"id":"e1150eb9-809b-40f2-acfa-efe3cb335948","pattern":{"source":"User should see Confirmation message for {string}{string} and Email as {string}"},"sourceReference":{"javaMethod":{"className":"stepDefinition.SignUp_Definition","methodName":"user_should_see_confirmation_message_for_and_email_as","methodParameterTypes":["java.lang.String","java.lang.String","java.lang.String"]}}}},{"stepDefinition":{"id":"21426d32-5a42-407a-8ae1-0e0978b89952","pattern":{"source":"User clicks Compose button in Homepage"},"sourceReference":{"javaMethod":{"className":"stepDefinition.SignUp_Definition","methodName":"user_clicks_compose_button_in_homepage"}}}},{"stepDefinition":{"id":"842b46b6-8164-4d77-96ee-4449ac6b3ba0","pattern":{"source":"User should receive an Acknowledgment"},"sourceReference":{"javaMethod":{"className":"stepDefinition.SignUp_Definition","methodName":"user_should_receive_an_acknowledgment"}}}},{"stepDefinition":{"id":"86c479aa-f254-41f7-82a4-98ef468e6d55","pattern":{"source":"User enters Password {string}"},"sourceReference":{"javaMethod":{"className":"stepDefinition.SignUp_Definition","methodName":"user_enters_password","methodParameterTypes":["java.lang.String"]}}}},{"stepDefinition":{"id":"0f287cac-810f-4b9a-9623-6e51d81ee183","pattern":{"source":"Homepage is in English language"},"sourceReference":

@@ -29,4 +29,4 @@ Then User should receive an Acknowledgment
 
 Examples:
 |firstname |lastname|email                 |username      |pwd|
-|Pratyashee|Changmai|pratyaTest01@gmail.com|PratyaTester01|Pratya@123|
+|Pratyashee|Changmai|pratyaTest02@gmail.com|PratyaTester02|Pratya@123|
